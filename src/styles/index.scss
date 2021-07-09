@@ -1,0 +1,10 @@
+@import './base/variables-colors';
+@import './base/customScrollbar';
+@import './base/base';
+@import './base/animations';
+
+// Components
+@import './components/header';
+@import './components/navbar';
+@import './components/banner';
+@import './components/footer';

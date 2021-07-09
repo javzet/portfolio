@@ -1,0 +1,56 @@
+// Default font
+@include font-change(14px);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.no-bold {
+  font-weight: normal;
+}
+
+.semi-bold {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.section-container {
+  height: calc(100% - #{$nav-height});
+  margin: 0px auto;
+  position: relative;
+  top: $nav-height;
+}
+
+section {
+  min-height: 100vh;
+}
+
+// @media (min-width: $mobile) {
+//   @include font-change();  WE ARE HERE
+// }
+
+@media (max-width: $s-mobile) {
+  @include font-change(1px);
+}
+
+@media (min-width: $s-screen) {
+  @include font-change(15px);
+}
+
+@media (min-width: $desktop) {
+  @include font-change(16px);
+}
+
+@media (min-width: $xl-screen) {
+}

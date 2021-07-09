@@ -1,0 +1,22 @@
+// General
+$nav-height: 60px;
+
+// Colors
+$main-color: #1983ff;
+$black: #010101;
+$white: #fafafa;
+$semi-black: #111111;
+$semi-white: #cccccc;
+
+// Break points
+$s-mobile: 320px;
+$mobile: 481px; // Default
+$s-screen: 769px;
+$desktop: 1025px;
+$xl-screen: 1201px;
+
+@mixin font-change($font-size) {
+  :root {
+    font-size: $font-size;
+  }
+}
