@@ -5,7 +5,7 @@ export const Banner = () => {
   return (
     <section className="banner">
       <Decorations />
-      <SectionContainer>
+      <SectionContainer className="banner-container">
         <div className="banner-content">
           <h1 className="banner-title">
             Welcome to
@@ -13,17 +13,17 @@ export const Banner = () => {
             My Personal Portfolio
           </h1>
           <p className="banner-info">
-            Hi!, My name is <b className="no-bold">Javier Zetina</b> and I´m{' '}
-            <b className="semi-bold">React Developer</b> this is my personal
-            portfolio where you will find a brief demonstration of what I know
-            how to do and my work.
+            Hi!, I'm <b className="semi-bold">Javier Zetina</b>,{' '}
+            <b className="no-bold">full Javascript developer</b>. I focus on
+            using <b className="no-bold">React</b> for web and{' '}
+            <b className="no-bold">React Native for mobile apps</b>.
           </p>
           <div className="buttons">
             <a href="" className="btn view-more">
-              Read More
+              Want to read more?
             </a>
             <a href="" className="btn view-work">
-              View My Work
+              Let's see my work!
             </a>
           </div>
         </div>

@@ -1,5 +1,12 @@
 import { Children } from '../../types';
 
-export const SectionContainer = ({ children }: { children: Children }) => {
-  return <div className="banner-container section-container">{children}</div>;
+export const SectionContainer = (props: {
+  children: Children;
+  className?: string;
+}) => {
+  return (
+    <div className={`${props.className && props.className} section-container`}>
+      {props.children}
+    </div>
+  );
 };

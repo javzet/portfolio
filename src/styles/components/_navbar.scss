@@ -99,6 +99,19 @@ $navbar-height-desktop: auto;
 .logo {
   color: $white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 3rem;
+    margin-right: 0.6rem;
+  }
+
+  h2 {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
 }
 
 @media (max-width: $s-mobile) {
@@ -113,6 +126,7 @@ $navbar-height-desktop: auto;
     padding: 0;
     background-color: transparent;
     margin-left: auto;
+    height: 100%;
 
     &::after {
       display: none;

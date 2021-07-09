@@ -46,7 +46,7 @@
 
 .banner-info {
   font-size: 1.3rem;
-  width: 80%;
+  width: 95%;
   color: #ddd;
   line-height: 1.4;
 
@@ -108,9 +108,7 @@
 .arrow-down {
   position: absolute;
   bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: arrow-down 1s linear infinite alternate;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,11 +122,18 @@
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 20px solid rgba($semi-white, 0.9);
+    border-top: 20px solid rgba($semi-white, 0.4);
+    animation: arrow-down 1s linear infinite alternate;
   }
 }
 
 @media (min-width: $mobile) {
+  .arrow-down::after {
+    border-top-color: rgba($semi-white, 0.9);
+  }
+  .banner-info {
+    width: 80%;
+  }
 }
 
 @media (max-width: $s-mobile) {

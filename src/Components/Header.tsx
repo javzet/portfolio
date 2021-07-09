@@ -1,5 +1,8 @@
 import { NavButton } from './subcomponents/Navbutton';
 import { NavIconToggleMenu } from './subcomponents/NavIconToggleMenu';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useRef } from 'react';
+
 export const Header = () => {
   const handleToggleIconClick = () => {
     const menuBtn = document.querySelector('.navbar-btn');
@@ -9,10 +12,32 @@ export const Header = () => {
     showMenu?.classList.toggle('show');
   };
 
+  const header = useRef<HTMLElement>(null);
+
+  useIntersectionObserver(
+    () => {
+      console.log('a');
+      header.current?.classList.remove('scroll');
+      header.current?.classList.add('static');
+    },
+    () => {
+      header.current?.classList.remove('static');
+      header.current?.classList.add('scroll');
+      console.log('b');
+    },
+    '.banner',
+    { threshold: 0, rootMargin: '-10px 0px' }
+  );
+
   return (
-    <header className="header">
+    <header className="header" ref={header}>
       <div className="logo">
-        <h2>Javier Zetina</h2>
+        <img
+          src="/logo-jz.png"
+          alt="Javier Zetina logo"
+          title="Javier Zetina"
+        />
+        <h2>Developer</h2>
       </div>
       <nav className="navbar">
         <NavButton>Hello</NavButton>
