@@ -16,14 +16,12 @@ export const Header = () => {
 
   useIntersectionObserver(
     () => {
-      console.log('a');
       header.current?.classList.remove('scroll');
       header.current?.classList.add('static');
     },
     () => {
       header.current?.classList.remove('static');
       header.current?.classList.add('scroll');
-      console.log('b');
     },
     '.banner',
     { threshold: 0, rootMargin: '-10px 0px' }

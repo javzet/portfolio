@@ -1,10 +1,5 @@
-import { MutableRefObject, useEffect } from 'react';
-
-type TrueCondition = (entry: IntersectionObserverEntry) => void;
-type FalseCondition = ((entry: IntersectionObserverEntry) => void) | null;
-type IntersectionObserverFuncion = IntersectionObserver;
-type Options = IntersectionObserverInit;
-type Entries = IntersectionObserverEntry[];
+import { useEffect } from 'react';
+import { Entries, TrueCondition, FalseCondition, Options } from '../types';
 
 function evaluateEntries(
   entries: Entries,
@@ -32,52 +27,15 @@ export function useIntersectionObserver(
   trueCondition: TrueCondition,
   falseCondition: FalseCondition = null,
   queryElement: string,
-  options?: Options
+  options: Options
 ) {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       evaluateEntries(entries, trueCondition, falseCondition);
     }, options);
 
-    const queryElements = document.querySelectorAll(queryElement);
-
-    queryElements.forEach((element) => {
-      observer.observe(element);
+    document.querySelectorAll(queryElement).forEach((e) => {
+      observer.observe(e);
     });
-  }, []);
+  }, [trueCondition, falseCondition, queryElement, options]);
 }
-
-// function toggleClass(
-//   add: string,
-//   remove: string | null = null,
-//   element: Element | String | null
-// ) {
-//   if (typeof add === 'string') {
-//   }
-//   if (remove) {
-//   } else {
-//   }
-// }
-
-// class Element {
-//   private add: globalThis.Element | null;
-//   private remove: Element;
-
-//   toggleClass(
-//     add: string,
-//     remove: string | null = null,
-//     element: Element | String | null
-//   ) {
-//     if (typeof add === 'string') {
-//       this.add = this.getElement(add);
-//     }
-//   }
-
-//   private getElement(name: string) {
-//     const element = document.querySelector(name);
-//     if (element === null) {
-//       console.warn('Can´t find the element, verify the class, id, name or tag');
-//     }
-//     return element;
-//   }
-// }

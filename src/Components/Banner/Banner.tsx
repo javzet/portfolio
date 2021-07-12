@@ -1,5 +1,6 @@
 import { SectionContainer } from '../subcomponents/SectionContainer';
 import { Decorations } from './Decorations';
+import { Link } from 'react-scroll';
 
 export const Banner = () => {
   return (
@@ -19,12 +20,24 @@ export const Banner = () => {
             <b className="no-bold">React Native for mobile apps</b>.
           </p>
           <div className="buttons">
-            <a href="" className="btn view-more">
+            <Link
+              to="work"
+              smooth={true}
+              spy={false}
+              duration={500}
+              className="btn view-more"
+            >
               Want to read more?
-            </a>
-            <a href="" className="btn view-work">
+            </Link>
+            <Link
+              to="work"
+              smooth={true}
+              spy={true}
+              duration={500}
+              className="btn view-more"
+            >
               Let's see my work!
-            </a>
+            </Link>
           </div>
         </div>
         <div className="arrow-down"></div>
